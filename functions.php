@@ -38,7 +38,7 @@ require_once( 'library/enqueue-scripts.php' );
 /** Add theme support */
 require_once( 'library/theme-support.php' );
 
-/** Add Nav Options to Customer */
+/** Add Nav Options to Customiser */
 require_once( 'library/custom-nav.php' );
 
 /** Change WP's sticky post class */
@@ -49,3 +49,10 @@ require_once( 'library/responsive-images.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
+
+// ---------------------------------------------------------------------------------------
+// Our Functions
+// ---------------------------------------------------------------------------------------
+
+/** Add Services Block to Customiser */
+require_once( 'library/jdc-register-homepage-content.php' );
