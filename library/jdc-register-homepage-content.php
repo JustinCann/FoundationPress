@@ -9,13 +9,20 @@
 if ( ! function_exists( 'wpt_register_homepage_content' ) ) :
 function wpt_register_homepage_content( $wp_customize ) {
 
+
+	//------------------------------------------------------------------------
+	// Panels
+
 	// Create custom panels
 	$wp_customize->add_panel( 'services_block', array(
 	  'priority' => 1000,
 	  'theme_supports' => '',
 	  'title' => __( 'Homepage Content', 'daisy' ),
-	  'description' => __( 'Controls the mobile menu', 'daisy' ),
+	  'description' => __( 'Controls the content in the services block', 'daisy' ),
 	) );
+
+	//------------------------------------------------------------------------
+	// Sections
 
 	// Create custom field for mobile navigation layout
 	$wp_customize->add_section( 'services_block_elements' , array(
@@ -24,13 +31,49 @@ function wpt_register_homepage_content( $wp_customize ) {
 		'priority' => 1000,
 	));
 
-	// Set default navigation layout
+	//------------------------------------------------------------------------
+	// Settings
+
+
+	// First Service Block Element
 	$wp_customize->add_setting(
-		'wpt_services_block_elements',
+		'wpt_first_service_block_element',
 		array(
-			'default'	=> __( 'Enter is some text for the website', 'daisy' ),
+			'default'          	=> __( 'Enter in some text for the website', 'daisy' ),
+			'sanitize_callback'	=> 'sanitize_text_field',
 		)
 	);
+
+	// Second Service Block Element
+	$wp_customize->add_setting(
+		'wpt_second_service_block_element',
+		array(
+			'default'          	=> __( 'Enter in some text for the website', 'daisy' ),
+			'sanitize_callback'	=> 'sanitize_text_field',
+		)
+	);
+
+	// Third Service Block Element
+	$wp_customize->add_setting(
+		'wpt_third_service_block_element',
+		array(
+			'default'          	=> __( 'Enter in some text for the website', 'daisy' ),
+			'sanitize_callback'	=> 'sanitize_text_field',
+		)
+	);
+
+	// Fourth Service Block Element
+	$wp_customize->add_setting(
+		'wpt_fourth_service_block_element',
+		array(
+			'default'          	=> __( 'Enter in some text for the website', 'daisy' ),
+			'sanitize_callback'	=> 'sanitize_text_field',
+		)
+	);
+
+
+	//------------------------------------------------------------------------
+	// Controls
 
 	// Add control for first service
 	$wp_customize->add_control(
@@ -41,7 +84,7 @@ function wpt_register_homepage_content( $wp_customize ) {
 				'label'    => __( 'First Service', 'daisy' ),
 				'type'		=> 'textarea',
 				'section' 	=> 'services_block_elements',
-				'settings' 	=> 'wpt_services_block_elements',
+				'settings' 	=> 'wpt_first_service_block_element',
 			)
 		)
 	);
@@ -55,12 +98,12 @@ function wpt_register_homepage_content( $wp_customize ) {
 				'label'    => __( 'Second Service', 'daisy' ),
 				'type'		=> 'textarea',
 				'section' 	=> 'services_block_elements',
-				'settings' 	=> 'wpt_services_block_elements',
+				'settings' 	=> 'wpt_second_service_block_element',
 			)
 		)
 	);
 
-	// Add control for second service
+	// Add control for third service
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
@@ -69,12 +112,12 @@ function wpt_register_homepage_content( $wp_customize ) {
 				'label'    => __( 'Third Service', 'daisy' ),
 				'type'		=> 'textarea',
 				'section' 	=> 'services_block_elements',
-				'settings' 	=> 'wpt_services_block_elements',
+				'settings' 	=> 'wpt_third_service_block_element',
 			)
 		)
 	);
 
-	// Add control for second service
+	// Add control for fourth service
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
@@ -83,7 +126,7 @@ function wpt_register_homepage_content( $wp_customize ) {
 				'label'    => __( 'Fourth Service', 'daisy' ),
 				'type'		=> 'textarea',
 				'section' 	=> 'services_block_elements',
-				'settings' 	=> 'wpt_services_block_elements',
+				'settings' 	=> 'wpt_fourth_service_block_element',
 			)
 		)
 	);
