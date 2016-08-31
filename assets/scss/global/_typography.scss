@@ -1,0 +1,29 @@
+//  Colour Palette
+//  -----------------------------
+
+
+/*********************
+LOCATIONS
+*********************/
+
+$assets-path: '../../assets';
+$fonts-path: #{$assets-path}/fonts;
+
+/*********************
+FONTS
+*********************/
+
+@font-face {
+    font-family: Open Sans Regular;
+    src: url(#{$fonts-path}/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: Open Sans Bold;
+    src: url(#{$fonts-path}/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: Open Sans Extra Bold;
+    src: url(#{$fonts-path}/OpenSans-ExtraBold.ttf);
+}
