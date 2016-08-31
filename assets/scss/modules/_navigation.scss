@@ -28,27 +28,37 @@
 .top-bar {
 
   .menu .home a {
-    font-size: 1rem;
-    color: #B9B9B9;
+    font-size: 1.5rem;
+    // color: $leaf-green; //#B9B9B9;
+
   }
 
   .menu a {
     height: 45px;
     line-height: 45px;
-    color: #e6e6e6;
+    color: $leaf-green; //#e6e6e6;
     padding-top: 0;
     padding-bottom: 0;
-    font-weight: bold;
-    font-size: 0.8rem;
+    // font-weight: bold;
+    font-family: Open Sans Bold;
+    font-size: rem-calc(18);
     line-height: 1;
+    margin-left: 1.5rem;
+
 
     &:hover:not(.button) {
-      background-color: #2a2a2a;
+      // background-color: #2a2a2a;
+      text-decoration: underline;
     }
   }
 
   .menu>li:not(.menu-text)>a { padding: 1rem; }
-  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+  .menu li:not(:last-child) {
+    // border-right: 1px solid #4e4e4e;
+    a {
+      margin-right: 1.5rem;
+    }
+   }
 
   .dropdown.menu .submenu {
     background-color: #121212;
