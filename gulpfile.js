@@ -5,6 +5,8 @@ var $           = require('gulp-load-plugins')();
 var argv        = require('yargs').argv;
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
+// var reload      = browserSync.reload;
+// var through     = require("through2");
 var merge       = require('merge-stream');
 var sequence    = require('run-sequence');
 var colors      = require('colors');
@@ -13,7 +15,7 @@ var del         = require('del');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = '';
+var URL = 'localhost/wordpress/';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -89,6 +91,7 @@ gulp.task('browser-sync', ['build'], function() {
 
   var files = [
             '**/*.php',
+            'assets/stylesheets/**/*.{css,min.css}',
             'assets/images/**/*.{png,jpg,gif}',
           ];
 
