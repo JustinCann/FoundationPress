@@ -1,5 +1,7 @@
-#page {
-  @include grid-row();
+// #page,
+.page,
+.home-page {
+  @include grid-row;
   margin-top: 3rem;
 
   .main-content {
@@ -12,4 +14,45 @@
     }
   }
 
+  .services {
+    .service-image {
+      margin: 0 0 1rem;
+      @include breakpoint(medium up) {
+        height: 12.5rem;
+        overflow: hidden;
+      }
+    }
+
+    .service-heading {
+      border-bottom: solid 1px $leaf-green;
+      // font-size: rem-calc(22);
+    }
+
+    .service-text {
+      // text-align: justify;
+    }
+  }
+
+  .read-more {
+    @include border-radius(3px);
+    @include transition(color, .5s, ease-in);
+    border: solid 1px $bark-brown;
+    color: $bark-brown;
+    display: inline-block;
+    margin: .5rem 0;
+    padding: .25rem .5rem;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      background: $bark-brown;
+      color: $pure-white;
+    }
+    // &::after {
+    //   content: ' >';
+    // }
+  }
+
 }
+
+// Reiki is a holistic and complementary therapy offering energy healing. It also helps to relieve stress and aid relaxation. Daisy has attained the highest level of Reiki Mastery and can offer benefits to all areas of your life.

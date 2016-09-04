@@ -13,6 +13,18 @@ $fonts-path: #{$assets-path}/fonts;
 FONTS
 *********************/
 
+h1,h2,h3,h4,h5,h6 {
+  font-family: Open Sans Bold;
+}
+
+h3, h4  {
+  color: $leaf-green;
+}
+
+/*********************
+FONTS
+*********************/
+
 @font-face {
     font-family: Open Sans Regular;
     src: url(#{$fonts-path}/OpenSans-Regular.ttf);
